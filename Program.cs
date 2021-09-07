@@ -32,8 +32,13 @@ namespace ShootingDice
 
             Console.WriteLine("-------------------");
 
+            Player smackTalking = new SmackTalkingPlayer();
+            smackTalking.Name = "Smackin' Lackin' Lakin";
+            
+            player1.Play(smackTalking);
+
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large
+                player1, player2, player3, large, smackTalking
             };
 
             PlayMany(players);
@@ -43,6 +48,7 @@ namespace ShootingDice
         {
             Console.WriteLine();
             Console.WriteLine("Let's play a bunch of times, shall we?");
+            SmackTalkingPlayer.Taunting(players[4]);
 
             // We "order" the players by a random number
             // This has the effect of shuffling them randomly
@@ -66,6 +72,7 @@ namespace ShootingDice
                 Player player1 = shuffledPlayers[i];
                 Player player2 = shuffledPlayers[i + 1];
                 player1.Play(player2);
+            
             }
         }
     }
