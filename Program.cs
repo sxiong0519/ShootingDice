@@ -48,6 +48,7 @@ namespace ShootingDice
         {
             Console.WriteLine();
             Console.WriteLine("Let's play a bunch of times, shall we?");
+            SmackTalkingPlayer.Taunting(players[4]);
 
             // We "order" the players by a random number
             // This has the effect of shuffling them randomly

@@ -19,5 +19,12 @@ namespace ShootingDice
         {
             Console.WriteLine($"OH YEAH! WHAT NOW, LOSER!");
         }
+
+        public static void Taunting(Player player)
+        {
+            Console.WriteLine($"{player.GetType().Name}: I WILL BEAT ALL OF YOU. PERIODT!");
+        }
+
+
     }
 }
