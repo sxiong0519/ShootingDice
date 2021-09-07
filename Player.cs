@@ -22,17 +22,38 @@ namespace ShootingDice
             Console.WriteLine($"{Name} rolls a {myRoll}");
             Console.WriteLine($"{other.Name} rolls a {otherRoll}");
             if (myRoll > otherRoll)
-            {
+            {   
                 Console.WriteLine($"{Name} Wins!");
+                if (Name == "Smackin' Lackin' Lakin" )
+                {
+                    SmackTalkingPlayer.TauntingWin(other);
+                }
+                else if (other.Name == "Smackin' Lackin' Lakin")
+                {
+                    SmackTalkingPlayer.TauntingLose(other);
+                };
             }
             else if (myRoll < otherRoll)
             {
+    
                 Console.WriteLine($"{other.Name} Wins!");
+                if (other.Name == "Smackin' Lackin' Lakin")
+                {
+                    SmackTalkingPlayer.TauntingWin(other);
+                }
+                else if (Name == "Smackin' Lackin' Lakin")
+                {
+                    SmackTalkingPlayer.TauntingLose(other);
+                };
             }
             else
             {
                 // if the rolls are equal it's a tie
                 Console.WriteLine("It's a tie");
+                if (other.Name == "Smackin' Lackin' Lakin" || Name == "Smackin' Lackin' Lakin")
+                {
+                    SmackTalkingPlayer.TauntingLose(other);
+                };
             }
         }
     }
